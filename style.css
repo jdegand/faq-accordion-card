@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: hsl(273, 75%, 66%);
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  width: 1000px;
+  position: relative;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#faq-text {
+  padding-bottom: 25px;
+}
+
+.faq-div {
+  display: flex;
+  width: 520px;
+  height: 380px;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.label {
+  display: block;
+  cursor: pointer;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.label:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.input {
+  display: none;
+}
+
+.content {
+  display: none;
+}
+
+.input:checked ~ .content {
+   display: block;
+   max-height: 10em;
+   padding: 20px;
+}
+
+
+.img-div {
+  height: 380px;
+  width: 480px
+}
+
+.desktop-img {
+  position: absolute;
+  left: -3em;
+  top: 9%;
+}
+
+.container::before {
+  content: "";
+  background-image: url('images/illustration-box-desktop.svg');
+  background-size: contain;
+  width: 40%;
+  height: 350px;
+  position: absolute;
+  z-index: 5;
+  left: -15em;
+  bottom: -10%;
+}
+
+hr {
+  height: 1px;
+  background-color: #eee;
+  border: none;
+  margin: 2px;
+}
+
+.accordion input[type="radio"]:checked + label {
+    font-weight: 700;
+}
+
+
+.label::after {
+  content:" ";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 10px;
+  height: 6px;
+  background-image: url("images/icon-arrow-down.svg");
+}
+
+.input:checked ~ .label:after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+
+
+
+@media (max-width: 400px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-div {
+    height: 180px;
+    width: 100%;
+  }
+
+  .faq-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 380px;
+    z-index: 9;
+    background-color: white;
+    padding-top: 20px;
+  }
+
+  .desktop-img {
+    position: absolute;
+    left: 2em;
+    top: -1em;
+    width: 80%;
+    z-index: 7;
+    padding-bottom: 40px;
+  }
+
+  .container::before {
+    content: "";
+    background-image: url(images/illustration-box-desktop.svg);
+    background-size: contain;
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    z-index: 8;
+    left: 0;
+    bottom: 60%;
+    background-color: transparent;
+  }
+
+}
