@@ -45,7 +45,7 @@ Users should be able to:
 ### What I learned
 
 The content needs to be in the same div as the radio button to be able to be targeted with :checked.  
-The content needs to a sibling or descendant.  
+The content needs to be a sibling or descendant.  
 
 ### Continued development
 
